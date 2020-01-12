@@ -1,4 +1,4 @@
-
+from Coords import *
 
 
 class UIElement:
@@ -23,9 +23,14 @@ class UIElement:
                                                          self.coords.y + self.height,
                                                          outline="#FFE773",
                                                          fill="#FFE773" if self.selected else "#FFD300")
-        self.id_text = self.canvas.create_text(self.coords.x, self.coords.y,
+        center = self.get_center()
+        self.id_text = self.canvas.create_text(center.x, center.y,
                                                fill='#A68900',
                                                font="Purisa",
                                                text=self.text)
         pass
 
+    def get_center(self):
+        x = self.coords.x + self.width / 2
+        y = self.coords.y + self.height / 2
+        return Coords(x, y)
