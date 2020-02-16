@@ -18,6 +18,8 @@ class UIElement:
         pass
 
     def render(self):
+        self.canvas.delete(self.id_rectangle)
+        self.canvas.delete(self.id_text)
         self.id_rectangle = self.canvas.create_rectangle(self.coords.x, self.coords.y,
                                                          self.coords.x + self.width,
                                                          self.coords.y + self.height,
@@ -34,3 +36,6 @@ class UIElement:
         x = self.coords.x + self.width / 2
         y = self.coords.y + self.height / 2
         return Coords(x, y)
+
+    def do(self):
+        pass
