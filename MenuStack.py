@@ -5,12 +5,12 @@ class MenuStack:
         self.selected = [0]
 
     def push(self, menu):
-        self.menus.append( menu)
+        self.menus.append(menu)
         self.selected.append(0)
 
     def pop(self):
         if len(self.menus) > 1:
-            return self.menus.pop()
+            return self.menus.pop(), self.selected.pop()
 
     def get_menu(self):
         return self.menus[-1]
